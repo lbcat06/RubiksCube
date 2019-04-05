@@ -19,12 +19,13 @@ class Cube {
       for(int j=0; j<dimensions; j++) {
         for(int k=0; k<dimensions; k++) {
           pushMatrix();
-          translate(i*BLOCK_WIDTH-100, j*100-BLOCK_WIDTH, k*100-BLOCK_WIDTH);
+          translate(i*BLOCK_WIDTH-BLOCK_WIDTH, j*BLOCK_WIDTH-BLOCK_WIDTH, k*BLOCK_WIDTH-BLOCK_WIDTH);
           blocks[i][j][k].show();
           popMatrix();
         }
       }
     }
   }
+ 
   
 }

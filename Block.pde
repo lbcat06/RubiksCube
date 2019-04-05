@@ -1,20 +1,21 @@
 class Block {
   
+  Properties property = new Properties();
+  
   color[] colors = {
     color(0,0,255), color(0,255,0), 
-    color(255,255,0), color(255, 255, 255), 
+    color(255,255,0), color(255,255,255), 
     color(255,80,10), color(255,0,0)
   };
   
   void show() {
-    //create faces
     for (int i=0; i<6; i++) {
       drawFace(i);
     }
   }
   
   void drawFace(int faceNo) {
-    fill(colors[faceNo]);
+    fill(colors[property.get(faceNo)]);
     strokeWeight(5);
     
     switch(faceNo) {
@@ -73,7 +74,7 @@ class Block {
         endShape(CLOSE);
         break;
     }
-  }
+}
   
   void addVertex(int x, int y, int z) {
     vertex((x-0.5)*BLOCK_WIDTH, (y-0.5)*BLOCK_WIDTH, (z-0.5)*BLOCK_WIDTH);

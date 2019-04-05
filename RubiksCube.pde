@@ -7,6 +7,13 @@ final int BLOCK_WIDTH = 100;
   
 //size of cube
 int dimensions = 3;
+
+final int R = 0;
+final int L = 1;
+final int U = 2;
+final int D = 3;
+final int F = 4;
+final int B = 5;
   
 Cube cube;
 
@@ -15,6 +22,7 @@ void setup() {
   frameRate(60);
   cam = new PeasyCam(this, 900);
   cube = new Cube();
+  //scramble();
 }
 
 void draw() {
@@ -25,4 +33,8 @@ void draw() {
   rotateY(0.65);
   
   cube.show();
+}
+
+void keyPressed() {
+  rotate(key);
 }
